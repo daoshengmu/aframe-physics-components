@@ -110,11 +110,16 @@ AFRAME.registerComponent('physics-body', {
     if (!this.world) { return; }
     var diffData = diff(this.data, oldData || this.data);
 
-    if ('velocity' in diffData) {
-      this.body.velocity.x = diffData.velocity.x;
-      this.body.velocity.y = diffData.velocity.y;
-      this.body.velocity.z = diffData.velocity.z;
-    }
+    // if ('velocity' in diffData) {
+    //   this.body.velocity.x = diffData.velocity.x;
+    //   this.body.velocity.y = diffData.velocity.y;
+    //   this.body.velocity.z = diffData.velocity.z;
+    // }
+     //if ('velocity' in diffData) {
+      this.body.velocity.x = this.data.velocity.x;
+      this.body.velocity.y = this.data.velocity.y;
+      this.body.velocity.z = this.data.velocity.z;
+    //}
   },
 
   applyImpulse: function (forceVec3, pointVec3) {
