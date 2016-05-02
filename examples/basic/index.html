@@ -7,6 +7,8 @@
       <a-assets>
         <a-mixin id="box" geometry="primitive: box" material="color: #166678; side: double"
                           physics-body="mass: 5; boundingBox: 2 2 2"></a-mixin>
+        <a-mixin id="sphere" geometry="primitive: sphere; radius: 2" material="color: #166678; side: double"
+                          physics-body="primitive: sphere; mass: 5; boundingSphere: 2"></a-mixin>
       </a-assets>
 
       <a-entity id="sky"
@@ -20,8 +22,9 @@
 
       <a-entity mixin="box" position="0 10 -10"></a-entity>
       <a-entity id="left-box" mixin="box" position="-2.1 1 -10"></a-entity>
-      <a-entity mixin="box" physics-body="angularVelocity: 0 0 60"
-                position="2 1 -10"></a-entity>
+      <a-entity mixin="sphere" physics-body="angularVelocity: 0 0 60"
+                position="5 3 -10"></a-entity>
+
       <a-entity id="bullet-box" mixin="box" physics-body="mass: 1; velocity: 0 0 -100"
                 position="2 3 50"></a-entity>
 
